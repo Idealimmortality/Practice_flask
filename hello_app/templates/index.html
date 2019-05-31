@@ -1,0 +1,27 @@
+<html>
+  <head>
+      {% if title %}
+          <title>{{title}} - microblog</title>
+      {% else %}
+          <title>title is not define</title>
+      {% endif %}
+  </head>
+  <body>
+        <div>Microblog: <a href={{ url_for('home') }}>Home</a></div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{ message }} </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+{#      <h1>Hello, {{user.nickname}}!</h1>#}
+{#    {% for post in posts %}#}
+{#    <p>{{post.author.nickname}} says: <b>{{post.body}}</b></p>#}
+{#    {% endfor %}#}
+  </body>
+</html>

@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block title %}
-Home
+   Home
 {% endblock %}
 {% block content %}
-<p>Home page for the Visual Studio Code Flask tutorial.</p>
+    <div> <a href={{ url_for('login') }}>点击返回到登录页</a></div>
+    <p>Home page for the Visual Studio Code Flask tutorial.</p>
 {% endblock %}
